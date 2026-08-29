@@ -1,35 +1,28 @@
-# deboog2k1
+# deboog2k2
 
-Build: deboog2k1  
-Phase: 1 Safe foundation  
-Date: 2026-08-29  
-Repo: moeblow9099/deboog2k  
-Branch: deboog2k1  
+Build: deboog2k2
+Phase: 2 Viewer
+Source: deboog2k1
+Branch: deboog2k2
 Main: not modified
 
-## Included
-
-- Multi-file HTML/CSS/JS
-- Files home
-- IndexedDB storage
-- Upload, paste, folder import
-- Folders create/rename/delete
-- Delete folder moves contained files up
-- File rename/move/duplicate/soft-delete
-- Search
-- History modal with saved list and restore
+## Added
+- Auto-open preview
+- Full viewport viewer
+- Portrait width-fit
+- Rotate refit
+- Two-finger pinch zoom
+- Two-finger move
+- One-finger tap on page
+- Full / Exit
+- Snap with no preview (share sheet or download)
 
 ## Not included
-
-- Viewer, zoom, rotation
+- + - Fit buttons
+- Auto-save to Photos
 - Audit engine
-- ZIP/project intelligence
-- React/Vite/Next runtime
-- PDF/image/media viewers
-- Library backup ZIP
-- Service worker / PWA cache
-- Native Share Extension / File Provider
+- ZIP/React runtime
+- PWA service worker
 
 ## Rollback
-
-Redeploy or check out branch `main` or the previous untouched README-only state. No data migration is required for app source. Browser IndexedDB data stays in the device browser profile.
+Use branch deboog2k1 or artifacts/deboog2k1-untouched-backup.zip.
