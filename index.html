@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3f5f7">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="DEBOOG2K">
+  <title>DEBOOG2K</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/files.css">
+  <link rel="stylesheet" href="styles/modals.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="app-header">
+      <div class="brand">
+        <h1>DEBOOG2K</h1>
+        <span class="build-badge" id="buildBadge">deboog2k1</span>
+      </div>
+      <button type="button" class="header-action" id="newFolderBtn">New Folder</button>
+    </header>
+
+    <nav class="breadcrumb" id="breadcrumb" aria-label="Folder path"></nav>
+
+    <section class="toolbar">
+      <label class="search-wrap">
+        <span class="visually-hidden">Search files</span>
+        <input type="search" id="searchInput" placeholder="Search" autocomplete="off" enterkeyhint="search">
+      </label>
+      <div class="import-bar" role="group" aria-label="Import">
+        <button type="button" id="uploadBtn">Upload</button>
+        <button type="button" id="pasteBtn">Paste</button>
+        <button type="button" id="folderImportBtn">Folder</button>
+        <button type="button" id="historyBtn">History</button>
+      </div>
+      <input type="file" id="fileInput" multiple hidden>
+      <input type="file" id="folderInput" webkitdirectory directory multiple hidden>
+    </section>
+
+    <main class="library" id="library" aria-live="polite"></main>
+    <p class="status-line" id="statusLine" hidden></p>
+  </div>
+
+  <div id="modalRoot"></div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
