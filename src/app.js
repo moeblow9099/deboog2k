@@ -15,6 +15,8 @@ import {
 import { recentItems, deletedItems } from "./recents.js";
 import { matchesQuery, typeLabel } from "./search.js";
 import { fileToRecord, detectPastedText } from "./import-engine.js";
+import { canPreview } from "./preview-engine.js";
+import { setupViewer, openViewer } from "./viewer.js";
 
 const els = {
   badge: document.getElementById("buildBadge"),
@@ -50,6 +52,7 @@ async function boot() {
   try {
     await loadFolders();
     await loadItems();
+    setupViewer();
     setState({ ready: true, status: "" });
   } catch (error) {
     setState({ status: error.message || "Storage failed to open." });
@@ -97,7 +100,7 @@ function renderLibrary() {
       const kind = button.getAttribute("data-kind");
       const id = button.getAttribute("data-open");
       if (kind === "folder") setState({ currentFolderId: id });
-      else openDetails(id);
+      else openItem(id);
     });
   });
   els.library.querySelectorAll("[data-more]").forEach((button) => {
@@ -149,6 +152,8 @@ async function importFileList(fileList) {
     saved += 1;
   }
   setState({ status: saved ? `Saved ${saved} item${saved === 1 ? "" : "s"}.` : "Nothing imported." });
+  const last = state.items.filter((item) => !item.deletedAt).sort((a, b) => b.savedAt - a.savedAt)[0];
+  if (last && canPreview(last)) await openViewer(last);
 }
 
 function shouldSkipImport(file) {
@@ -203,6 +208,8 @@ function openPaste() {
     });
     closeSheet();
     setState({ status: `Saved ${detected.name}.` });
+    const last = state.items.filter((item) => !item.deletedAt).sort((a, b) => b.savedAt - a.savedAt)[0];
+    if (last && canPreview(last)) await openViewer(last);
   });
 }
 
@@ -246,7 +253,7 @@ function openHistory() {
   sheet.querySelectorAll("[data-open-item]").forEach((button) => {
     button.addEventListener("click", () => {
       closeSheet();
-      openDetails(button.getAttribute("data-open-item"));
+      openItem(button.getAttribute("data-open-item"));
     });
   });
   sheet.querySelectorAll("[data-restore]").forEach((button) => {
@@ -256,6 +263,20 @@ function openHistory() {
       setState({ status: "Item restored." });
     });
   });
+}
+
+async function openItem(id) {
+  const item = state.items.find((entry) => entry.id === id);
+  if (!item) return;
+  if (canPreview(item)) {
+    try {
+      await openViewer(item);
+      return;
+    } catch (error) {
+      setState({ status: error.message || "Preview failed." });
+    }
+  }
+  openDetails(id);
 }
 
 function openDetails(id) {
