@@ -1,7 +1,7 @@
 # DEBOOG2K
 
-This branch is **deboog2k3**.
+This branch is **deboog2k4**.
 
-Phase 2 viewer plus offline cache and upload error handling.
+iOS file-preview IndexedDB hang fix. Upload falls back and opens the viewer.
 
 `main` is untouched.

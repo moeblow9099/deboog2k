@@ -20,13 +20,11 @@
     <header class="app-header">
       <div class="brand">
         <h1>DEBOOG2K</h1>
-        <span class="build-badge" id="buildBadge">deboog2k3</span>
+        <span class="build-badge" id="buildBadge">deboog2k4</span>
       </div>
       <button type="button" class="header-action" id="newFolderBtn">New Folder</button>
     </header>
-
     <nav class="breadcrumb" id="breadcrumb" aria-label="Folder path"></nav>
-
     <section class="toolbar">
       <label class="search-wrap">
         <span class="visually-hidden">Search files</span>
@@ -41,11 +39,9 @@
       <input type="file" id="fileInput" multiple hidden>
       <input type="file" id="folderInput" webkitdirectory directory multiple hidden>
     </section>
-
     <main class="library" id="library" aria-live="polite"></main>
     <p class="status-line" id="statusLine" hidden></p>
   </div>
-
   <div id="modalRoot"></div>
   <script type="module" src="src/app.js"></script>
   <script>
