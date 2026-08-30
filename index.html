@@ -48,5 +48,10 @@
 
   <div id="modalRoot"></div>
   <script type="module" src="src/app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) {
+      navigator.serviceWorker.register("./sw.js").catch(function () {});
+    }
+  </script>
 </body>
 </html>
