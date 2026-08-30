@@ -1,3 +1,3 @@
 # DEBOOG2K
 
-Branch deboog2k5. Auto-open viewer from the imported blob.
+Branch deboog2k7. Desktop default + Mobile. No iPad/Tablet.

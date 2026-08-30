@@ -1,4 +1,4 @@
-# deboog2k5
+# deboog2k7
 
-Source: deboog2k4
-Fix: auto preview uses the saved blob. Every import opens the viewer.
+Source: deboog2k6
+Change: Desktop default. Mobile option. Tablet/iPad removed.
