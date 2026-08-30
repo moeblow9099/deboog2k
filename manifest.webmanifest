@@ -1,0 +1,9 @@
+{
+  "name": "DEBOOG2K",
+  "short_name": "DEBOOG2K",
+  "display": "standalone",
+  "start_url": "./index.html",
+  "scope": "./",
+  "background_color": "#f3f5f7",
+  "theme_color": "#f3f5f7"
+}

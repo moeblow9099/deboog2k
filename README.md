@@ -1,7 +1,7 @@
 # DEBOOG2K
 
-This branch is **deboog2k2 / Phase 2**.
+This branch is **deboog2k3**.
 
-Phase 1 files library plus viewer: auto-open, two-finger zoom/move, Full/Exit, Snap to share sheet.
+Phase 2 viewer plus offline cache and upload error handling.
 
-`main` is untouched. Phase 3 waits for Go.
+`main` is untouched.
