@@ -1,7 +1,7 @@
 const listeners = new Set();
 
 export const state = {
-  buildVersion: "deboog2k4",
+  buildVersion: "deboog2k5",
   ready: false,
   currentFolderId: null,
   query: "",

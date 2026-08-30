@@ -1,4 +1,4 @@
-# deboog2k4
+# deboog2k5
 
-Source: deboog2k3
-Fix: IndexedDB open/write timeout, then memory save + viewer open.
+Source: deboog2k4
+Fix: auto preview uses the saved blob. Every import opens the viewer.
